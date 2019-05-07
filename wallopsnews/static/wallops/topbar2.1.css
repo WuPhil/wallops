@@ -1,0 +1,158 @@
+body {background-repeat: no-repeat;margin: 0px;background-size:cover;background-attachment: fixed;height:100%;}
+html{height:100%}
+
+::selection{color:yellow;}
+
+/*Essential Homebar*/
+#homebar {width:100%;opacity: 1;z-index: 100;position:fixed;background:black;color:white;top:0;padding:0px}
+/*#homebar ul{margin:0;padding:0;position:sticky;top:0;}*/
+/*#homebar li{list-style-type: none;}*/
+.topnav a{float:left;display:inline-block;text-decoration:none;color:white;padding:13px 15px;font-family: Quicksand;font-size: 15px;}
+#homebar a:hover{background: #33ccff; color: black}
+#homebar a.logo{color: white; background: black}
+a.rightTab{float:right;}
+
+/*Clearfix for sticky navbar*/
+.topnav:after {
+    content:'';
+    clear:both;
+    display:table;
+}
+
+/*Body Text*/
+.intro {margin-left:60px;color:#f2f2f2;margin-right:60px;font-size: 40px;text-align:center;}
+.bottomtext{font-size: 15px;color:white;background:black;padding:20px 0px;opacity:0.7;margin-bottom: 0px;margin-top:0px; margin-left:0px; margin-right:0px;}
+h1{background:black;padding:20px 0px; margin-top:60px; color:white; font-size:100px;margin-bottom:0px;line-height:30%;}
+
+/*Homebar Extra*/
+li.dropdown{display: block;float:none;}
+#homebar a.icon{display:none}
+.searchbar{border-box: box-sizing; padding: 14px 15px 12px 4px;border: none;background-position: 14px 12px;width:100%}
+
+@media screen and (max-width: 1200px){
+#homebar a{display:none;}
+#homebar a.logo{display:block;float:left;}
+a.filler{display:none;background:black;}
+#homebar a.icon{display:block;float:right;padding-right:15px}
+}
+
+@media screen and (max-width: 1200px){
+.responsive{position:relative;}
+.responsive a.icon{position:absolute;right:0;top:0;}
+#homebar.responsive a{display:block;float:none;text-align:left;}
+.responsive .dropdown{display:block;float:none;text-align:left;}
+.responsive .dropdownLeft{display:block;float:none;text-align:left;}
+.responsive .dropdown-content{left:0;}
+#homebar.responsive a.filler{display:none;}
+}
+
+.dropdown{
+    display:inline-block;
+    position:relative;
+    float:right;
+}
+
+.dropdownLeft{
+    display:inline-block;
+    position:relative;
+    float:left;
+}
+
+.dropdown-content {
+    right:0;
+    top:45px;
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    border: 1px solid #ddd;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a{
+    color: black;
+    padding: 14px 16px;
+    text-decoration: none;
+    display: block;
+    float:none;
+    text-align: left;
+    color:white;
+}
+
+.dropdown:hover .dropdown-content{
+    float:right;
+    display:block;
+}
+
+.dropdown-content:hover .dropdownLeft{
+    background: #33ccff; color: black;
+}
+
+.dropdownLeft:hover .dropdown-content{
+    float:right;
+    display:block;
+}
+
+.weatherTitle{
+     background:#006680;
+     font-family:'Quicksand';
+     font-size:40px;
+     padding:10px 0px;
+     color:white;
+     box-sizing:border-box;
+     width:25%;
+     margin-top:0px;
+     margin-bottom:10px;
+     float:left;
+     border-right:3px solid;
+}
+
+.newsBanner{
+     clear:both;
+     background:black;
+     margin-top:12px;
+     margin-bottom:0px;
+     font-size:50px;
+     font-family:'Quicksand';
+     padding:15px;
+     display:block;
+     color:white;
+}
+
+.articleTitle{
+    padding: 0px 15px;
+    margin-top:0px;
+    margin-bottom:0px;
+    font-size:50px;
+    font-family:'Roboto Condensed';
+    padding:15px;
+    color:black;
+    width:100%;
+    display:block;
+    text-decoration: none;
+    border-bottom:3px solid;
+}
+
+.articleTitle:hover{
+    background:yellow;
+}
+.recArticle a{
+    border-bottom:3px solid white;
+    display:block;
+    background:#cccccc;
+    padding:20px 10px;
+    width:100%;
+    margin-bottom:0px;
+    margin-top:0px;
+    font-size:15px; 
+    max-width: 200px;
+}
+
+.recArticle a:hover{
+    background:yellow;
+}
+.recArticle a{
+    color:black;
+    text-decoration: none;
+}
