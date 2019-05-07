@@ -1,0 +1,100 @@
+{% load static %}
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Audiowide|Pattaya|Quicksand" rel="stylesheet">
+<title>Wallops News</title>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" type = "text/css" href="{% static 'wallops/topbar2.1.css'%}">
+<link href="https://fonts.googleapis.com/css?family=Vesper+Libre|Staatliches|Righteous|Cinzel|Tauri|Major+Mono+Display|Roboto+Condensed" rel="stylesheet">
+<script>
+function myFunction() {
+    var x = document.getElementById("homebar");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    }else {
+        x.className = "topnav";
+    }
+}
+</script>
+</head>
+<body style = "background-color:">
+<div id = "homebar" class = "topnav">
+<!--<ul>-->
+<a class = "logo" style = "font-family: 'Pattaya';padding:13px 15px 0px 15px">Wallops News™&nbsp;&nbsp;</a>
+<a href="/wallops/"><i class="fa fa-home"></i>&nbsp;Home</a>
+<a href="/wallops/1/"><i class="fas fa-bolt"></i>&nbsp;&nbsp;Tech</a>
+<a href=""><i class="fas fa-map-marker-alt"></i>&nbsp;&nbsp;Travel</a>
+<div class = "dropdownLeft">
+<a href=""><i class="far fa-newspaper"></i>&nbsp;&nbsp;Entertainment</a>
+<div class = "dropdown-content" style = "background-color:#737373;left:0;">
+<a><i class="fas fa-utensils"></i>&nbsp;&nbsp;Food</a>
+<a><i class="fas fa-crown"></i>&nbsp;&nbsp;Celebrities</a>
+</div>
+</div>
+<a href=""><i class="fas fa-poll"></i>&nbsp;&nbsp;Polls</a>
+<a><i class="fas fa-donate"></i>&nbsp;&nbsp;Donate<font color = black> all your money</font></a>
+<!--<div class = "option"><a class = "logo rightTab filler"></a></div>-->
+<div class = "dropdown">
+<a><i class="fas fa-search"></i></a>
+<div class = "dropdown-content"  style = "min-width:250px">
+	<form>
+	<input type="text" placeholder="Don't Search..." class = "searchbar" maxlength = 35>
+	<!--<a style = "background-color:red;display:inline-block;float:right;"><center>Search</center></a>-->
+	<!--<button type="submit" style = "display:inline-block;float:right;padding:10px"><i class="fa fa-search"></i></button>-->
+	</form>
+</div>
+</div>
+<a class = "rightTab search" href=""><i class="fa fa-address-card"></i>&nbsp;&nbsp;About&nbsp;</i></a>
+<!--<div class = "option"><a class = "logo rightTab filler"></a></div>-->
+<a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa fa-bars"></i></a>
+<div class = "dropdown">
+<a class = "rightTab" href=""><i class="fas fa-desktop"></i>&nbsp;&nbsp;Anti-Social&nbsp;<i class="fas fa-caret-down"></i></i></a>
+<div class = "dropdown-content" style = "background-color:#737373;">
+<a style = "color:white;" class = "rightTab" href=""><i class="fab fa-facebook-square"></i>&nbsp;&nbsp;Fakesbook</a>
+<a style = "color:white;" class = "rightTab" href="https://twitter.com/maozedong?lang=en"><i class="fab fa-twitter"></i>&nbsp;&nbsp;Tweeter</a>
+</div>
+</div>
+<!--</ul>-->
+</div>
+<div style = "margin-left:150px;margin-right:150px;margin-bottom:5px">
+<b><div style = "margin-top:50px;margin-bottom:0px;font-size: 90px; font-family: Quicksand;">{{article.article_type}}:</b> {{article.article_title}}</div>
+<b><div style = "font-family: Roboto Condensed;font-size:20px;margin-top: 0px;">By {{article.author}}</b>
+<br><div style="color:#b3b3b3;margin-top:5px;"><i class="far fa-clock"></i>&nbsp;Date Published: {{article.pub_date}}</div>
+<br>
+<div>
+<img src = "{% static 'wallops/images/'|add:article.image_name %}" alt = "to be decided" width = 800 style = "float:left;overflow:auto;margin-bottom:-30px"></img>
+<div style = "float: left; margin-left:20px;">
+<b>Latest Articles</b>
+{%if latest_article_list%}
+	{%for article in latest_article_list%}
+		<div class = "recArticle">
+		<a href="/wallops/{{article.id}}">{{article.article_title}}</a>
+		</div>
+	{% endfor %}
+{% else %}
+	<p>No articles are available.</p>
+{%endif%}
+</div>
+</div>
+<div style = "clear:both;line-height:200%;margin-top:0px">
+<br>
+{{article.article_content|linebreaks}}<br>
+</div>
+</div>
+</div>
+
+<div style = "text-align:right;color:white;margin-bottom:0px;padding-right:3px;opacity:1;margin-left:0px">
+v 0.6.0
+<center>
+<p class="bottomtext" style = "opacity:1">© 1432-2019 Colin Wu Communist Conservative Contradictory Conglomerate Corporation Coalition Company Co.
+<br>All Wrongs Reserved<br>
+<br><font style = "size:30px;font-family:'Quicksand';">Made with <i class="fab fa-squarespace"></i>&nbsp;DODECAHEDRONSPACE
+<br><font size=1px>(self-coded)</font>
+</font>
+</center>
+</p>
+</div>
